@@ -1,7 +1,7 @@
 <?php
      header("Access-Control-Allow-Origin: *");
      include_once 'db.php'; 
-     $sql = 'SELECT id, name, email, mobile FROM users';
+     $sql = 'SELECT id, name, email, mobile, lat, lon FROM users';
 
      $result = executeQuery($sql);
      $users = array();
