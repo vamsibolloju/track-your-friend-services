@@ -2,7 +2,7 @@
      $user_id = $_GET['id'];
      header("Access-Control-Allow-Origin: *");
      include_once 'db.php'; 
-     $sql = "SELECT id, name, email FROM users where id = '" . $user_id . "' ";
+     $sql = "SELECT id, name, email, mobile, lat , lon FROM users where id = '" . $user_id . "' ";
      $result = executeQuery($sql);
      $users;
 	
