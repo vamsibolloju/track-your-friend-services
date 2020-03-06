@@ -6,11 +6,14 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 include_once 'db.php';
 $data = json_decode(file_get_contents('php://input'), true);
 
+$response = array();
 if(isset($data["user_id"]) && isset($data["friend_id"]) ){
+   
  $sql = "INSERT INTO userfriends(user_id, friend_id) VALUES ('".$data["user_id"]."', '".$data["friend_id"]."')";
  $result = executeQuery($sql);
  if($result){
-    $response->message = "Friend added sucessfully";
+      
+    $response["message"] = "Friend added sucessfully";
  }else{
     $response->message = "Error ocured";
  }

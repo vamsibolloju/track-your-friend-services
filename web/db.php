@@ -1,11 +1,10 @@
 <?php
  header("Access-Control-Allow-Origin: *");
 
-  	 $dbhost = 'remotemysql.com:3306';
-         $dbuser = '1deMfqHP74';
-         //$dbpass = '1cM9QTG0rE';
-	 $dbpass = '9qESYR0Jnh';
-         $dbname = '1deMfqHP74';
+  	 $dbhost = 'localhost:3306';
+     $dbuser = 'root';         
+	 $dbpass = '';
+     $dbname = '1deMfqHP74';
 	 $conn;	
 	function getDBConnection(){
          global $conn; 
