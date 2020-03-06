@@ -1,8 +1,8 @@
 <?php
-     $user_id = $_GET['id'];
+     $user_id = $_GET['name'];
      header("Access-Control-Allow-Origin: *");
      include_once 'db.php'; 
-     $sql = "SELECT id, name, email, mobile, lat , lon FROM users where id = '" . $user_id . "' ";
+     $sql = "SELECT id, name, email, mobile, lat , lon FROM users where name = '" . $user_id . "' ";
      $result = executeQuery($sql);
      $users;
 	
@@ -12,7 +12,7 @@
        }
      }
 
-     $sql = "SELECT friend_id from userfriends where user_id = ' " . $user_id . " ' ";
+     $sql = "SELECT friend_id from userfriends where user_id = ' " . $user['id'] . " ' ";
      $result = executeQuery($sql);
      $friends = []; 		
      if (mysqli_num_rows($result) > 0) {
